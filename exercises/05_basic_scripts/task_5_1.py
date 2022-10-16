@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.10
 # -*- coding: utf-8 -*-
 """
 Задание 5.1
@@ -46,3 +47,5 @@ london_co = {
         "routing": True,
     },
 }
+device = input('Введите имя устройства: ')
+print(london_co.get(device))

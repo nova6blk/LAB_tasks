@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.10
 # -*- coding: utf-8 -*-
 """
 Задание 5.3a
@@ -25,3 +26,19 @@ trunk_template = [
     "switchport mode trunk",
     "switchport trunk allowed vlan {}",
 ]
+int_dict = {
+    'quest': {
+        'access': 'Введите номер VLAN: ',
+        'trunk': 'Введите разрешенные VLANы:'
+        },
+    'mode': {
+        'access': access_template,
+        'trunk': trunk_template
+        }
+    }
+int_mode = input('Введите режим работы интерфейса (access/trunk): ')
+interface = input('Введите тип и номер интерфейса: ')
+int_vlan = input(int_dict.get('quest').get(int_mode))
+print('interface {}\n'.format(interface) + '\n'.join(int_dict.get('mode').get(int_mode)).format(int_vlan))
+### Сортировка вланов в трнке и удаление дублей ###
+#print('interface {}\n'.format(interface) + '\n'.join(int_dict.get('mode').get(int_mode)).format(str(sorted(set(int_vlan.split(',')))).strip('{}').replace("'",'').replace(' ','').strip('[]')))

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.10
 # -*- coding: utf-8 -*-
 """
 Задание 6.1
@@ -12,4 +13,11 @@ MAC-адреса используются в формате XXXX.XXXX.XXXX
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
 
+from cProfile import label
+
+
 mac = ["aabb:cc80:7000", "aabb:dd80:7340", "aabb:ee80:7000", "aabb:ff80:7000"]
+result = []
+for mac_add in mac:
+    result.append(mac_add.replace(':', '.'))
+print(result)
